@@ -64,4 +64,9 @@ else ()
     endif()
 endif()
 
-install(TARGETS helloworld_cli RUNTIME DESTINATION bin)
+if(WITH_BOOST_TEST)
+    enable_testing()
+    add_test(test_version test_version)
+endif()
+
+install(TARGETS helloworld_cli RUNTIME DESTINATION ${BIN_DIR})
