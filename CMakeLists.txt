@@ -5,7 +5,6 @@ set(PROJECT_VESRION 0.0.${PATCH_VERSION})
 
 set(INCLUDE_DIR ${CMAKE_SOURCE_DIR}/include)
 set(CONFIG_DIR ${CMAKE_SOURCE_DIR}/cfg)
-set(BIN_DIR ${CMAKE_SOURCE_DIR}/bin)
 
 option(WITH_BOOST_TEST "Wheter to build Boost test" ON)
 
@@ -20,3 +19,7 @@ set(CPACK_PACKAGE_VERSION_PATCH "${PROJECT_VERSION_PATCH}")
 set(CPACK_PACKAGE_CONTACT example@example.com)
 include(CPack)
 
+if(WITH_BOOST_TEST)
+    enable_testing()
+    add_test(test_version test_version)
+endif()
