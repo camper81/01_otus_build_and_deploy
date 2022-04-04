@@ -5,7 +5,6 @@ set(PROJECT_VERSION 0.0.${PATCH_VERSION})
 
 set(INCLUDE_DIR ${CMAKE_SOURCE_DIR}/include)
 set(CONFIG_DIR ${CMAKE_SOURCE_DIR}/cfg)
-set(BIN_DIR ${CMAKE_SOURCE_DIR}/bin)
 
 option(WITH_BOOST_TEST "Whether to build Boost test" ON)
 
@@ -20,3 +19,5 @@ set(CPACK_PACKAGE_VERSION_PATCH "${PROJECT_VERSION_PATCH}")
 set(CPACK_PACKAGE_CONTACT example@mail.com)
 
 include(CPack)
+
+install(TARGETS helloworld_cli RUNTIME DESTINATION bin)
